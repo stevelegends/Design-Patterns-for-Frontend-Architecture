@@ -3,9 +3,9 @@
 Use this structure as a reusable standard for frontend projects that follow layered architecture patterns in both React and Angular.
 
 ## Architecture conventions
-- Keep feature code under:
-  - react/src/features/<feature>
-  - angular/src/features/<feature>
+- Keep feature code under a framework-specific feature folder such as:
+  - src/features/<feature>
+  - features/<feature>
 - Follow this structure per feature:
   - domain: models, types, and domain rules
   - application: use cases, validation, builders, and orchestration
