@@ -101,9 +101,10 @@ export class WithdrawalComponent {
     }
 
     const attemptCount = this.state.status === 'face_verification_failed' ? this.state.attemptCount : 0;
+    const input = this.state.status === 'face_verification_failed' ? this.state.input : this.state.input;
 
     try {
-      const nextState = await completeFaceVerificationUseCase.execute(this.getInput(), attemptCount);
+      const nextState = await completeFaceVerificationUseCase.execute(input, attemptCount);
       this.state = nextState;
 
       if (this.state.status === 'face_verification_failed') {
