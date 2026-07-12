@@ -1,6 +1,6 @@
-# Agent Guidelines for This Repository
+# Agent Guidelines for Frontend Projects
 
-This repository demonstrates layered frontend architecture patterns for a withdrawal feature in both React and Angular.
+Use this structure as a reusable standard for frontend projects that follow layered architecture patterns in both React and Angular.
 
 ## Architecture conventions
 - Keep feature code under:
@@ -9,19 +9,19 @@ This repository demonstrates layered frontend architecture patterns for a withdr
 - Follow this structure per feature:
   - domain: models, types, and domain rules
   - application: use cases, validation, builders, and orchestration
-  - infrastructure: repositories, adapters, and external APIs
+  - infrastructure: repositories, adapters, and external API abstractions
   - presentation: UI components, screens, or Angular presenters
 
 ## Naming conventions
 - Use lowercase file names with dot-separated domain names.
 - Examples:
-  - withdrawal.model.ts
-  - withdrawal.adapter.ts
+  - feature.model.ts
+  - feature.adapter.ts
   - validation.ts
-  - withdrawal.builder.ts
-  - withdrawal.usecases.ts
-  - WithdrawalScreen.tsx
-  - withdrawal.component.ts
+  - feature.builder.ts
+  - feature.usecases.ts
+  - FeatureScreen.tsx for React presentation files
+  - feature.component.ts for Angular presentation files
 
 ## When adding new features or business rules
 1. Add or update the domain models first.
@@ -34,3 +34,8 @@ This repository demonstrates layered frontend architecture patterns for a withdr
 - Model rules in domain/application layers rather than UI.
 - Represent outcomes as explicit flow states.
 - Handle failure states such as retryable failure, retry limit reached, and cooldown.
+- Prefer small, focused use cases and explicit error handling.
+
+## Reuse guidance
+- This standard can be copied into any frontend project that wants consistent MVVM-style organization.
+- Replace the example feature name with the real feature you are implementing.
